@@ -7,18 +7,20 @@
   
   <title>P1001题解 A+B Problem | Octopus136&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description输入两个整数$ a,b $，输出它们的和(|a|,|b|&amp;lt;=10^9)。">
+  <meta name="description" content="Description 输入两个整数a,ba,ba,b，输出它们的和(∣a∣,∣b∣&amp;lt;=109)(|a|,|b|&amp;lt;=10^9)(∣a∣,∣b∣&amp;lt;=10​9​​)。">
 <meta name="keywords" content="数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1001题解 A+B Problem">
 <meta property="og:url" content="http://www.octopus136.top/2018/08/23/P1001题解-A-B-Problem/index.html">
 <meta property="og:site_name" content="Octopus136&#39;s Blog">
-<meta property="og:description" content="Description输入两个整数$ a,b $，输出它们的和(|a|,|b|&amp;lt;=10^9)。">
+<meta property="og:description" content="Description 输入两个整数a,ba,ba,b，输出它们的和(∣a∣,∣b∣&amp;lt;=109)(|a|,|b|&amp;lt;=10^9)(∣a∣,∣b∣&amp;lt;=10​9​​)。">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-08-23T13:30:32.925Z">
+<meta property="og:image" content="http://cc.amazingcounters.com/counter.php?i=3226239&c=9679030">
+<meta property="og:updated_time" content="2018-08-26T09:45:31.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="P1001题解 A+B Problem">
-<meta name="twitter:description" content="Description输入两个整数$ a,b $，输出它们的和(|a|,|b|&amp;lt;=10^9)。">
+<meta name="twitter:description" content="Description 输入两个整数a,ba,ba,b，输出它们的和(∣a∣,∣b∣&amp;lt;=109)(|a|,|b|&amp;lt;=10^9)(∣a∣,∣b∣&amp;lt;=10​9​​)。">
+<meta name="twitter:image" content="http://cc.amazingcounters.com/counter.php?i=3226239&c=9679030">
   
     <link rel="alternate" href="/atom.xml" title="Octopus136&#39;s Blog" type="application/atom+xml">
   
@@ -29,6 +31,9 @@
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -91,14 +96,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>输入两个整数$ a,b $，输出它们的和(|a|,|b|&lt;=10^9)。</p>
+        <h2 id="description"><a class="markdownIt-Anchor" href="#description"></a> Description</h2>
+<p>输入两个整数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mpunct">,</span><span class="mord mathit">b</span></span></span></span>，输出它们的和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">∣</mi><mi>a</mi><mi mathvariant="normal">∣</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">(|a|,|b|&lt;=10^9)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">∣</span><span class="mord mathit">a</span><span class="mord mathrm">∣</span><span class="mpunct">,</span><span class="mord mathrm">∣</span><span class="mord mathit">b</span><span class="mord mathrm">∣</span><span class="mrel">&lt;</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">9</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span>。</p>
 <a id="more"></a>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我们容易发现，因为a,b的和满足|a|,|b|&lt;=10^9，所以可以直接相加求和输出即可。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a+b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="solution"><a class="markdownIt-Anchor" href="#solution"></a> Solution</h2>
+<p>我们容易发现，因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mpunct">,</span><span class="mord mathit">b</span></span></span></span>的和满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mi mathvariant="normal">∣</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">|a|,|b|&lt;=10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∣</span><span class="mord mathit">a</span><span class="mord mathrm">∣</span><span class="mpunct">,</span><span class="mord mathrm">∣</span><span class="mord mathit">b</span><span class="mord mathrm">∣</span><span class="mrel">&lt;</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">9</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>，所以可以直接相加求和输出即可。</p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a+b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本篇浏览人数：<div align="right"><img src="http://cc.amazingcounters.com/counter.php?i=3226239&amp;c=9679030" alt="img"></div></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.octopus136.top/2018/08/23/P1001题解-A-B-Problem/" data-id="cjl6lxilz0000zsnoq2861kvy" class="article-share-link">Share</a>
+      <a data-url="http://www.octopus136.top/2018/08/23/P1001题解-A-B-Problem/" data-id="cjlao4ut10000vgnod6oad9a5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论/">数论</a></li></ul>
